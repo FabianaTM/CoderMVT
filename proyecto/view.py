@@ -7,14 +7,18 @@ import random
 
 from AppCoder.models import Familiar
 
-def crear_persona(request, nombre, apellido):
+def crear_persona(request):
 
     edad=random.randrange(1,99) 
 
-    persona= Familiar(nombre=nombre, apellido=apellido, edad=edad, fecha_nacimiento=datetime.now())
-    persona.save()
+    persona1= Familiar(nombre='Paola', apellido='Arena', edad=edad, fecha_nacimiento=datetime.now())
+    persona2=Familiar(nombre='Fabiana', apellido='Torres Meza', edad=edad, fecha_nacimiento=datetime.now())
+    persona3= Familiar(nombre='Ricardo', apellido='Fort', edad=edad, fecha_nacimiento=datetime.now())
+    persona1.save()
+    persona2.save()
+    persona3.save()
     template=loader.get_template('crear_persona.html')
-    template_renderizado= template.render({'personas': persona})
+    template_renderizado= template.render({})
 
     return HttpResponse(template_renderizado)
 

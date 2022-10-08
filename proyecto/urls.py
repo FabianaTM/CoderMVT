@@ -20,5 +20,5 @@ from proyecto.view import crear_persona, ver_persona
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('ver_persona/', ver_persona),
-    path('crear_persona/<str:nombre>/<str:apellido>/', crear_persona)
+    path('crear_persona/', crear_persona)
 ]
